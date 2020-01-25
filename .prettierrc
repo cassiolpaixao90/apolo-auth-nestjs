@@ -1,0 +1,17 @@
+{
+	"trailingComma": "none",
+	"tabWidth": 4,
+	"useTabs": true,
+	"singleQuote": true,
+	"printWidth": 100,
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"overrides": [
+		{
+			"files": "*.ts*",
+			"options": {
+				"prettier.printWidth": 100
+			}
+		}
+	]
+}
