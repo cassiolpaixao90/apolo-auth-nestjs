@@ -1,16 +1,25 @@
-export class MongoRepository<T extends BaseEntity> implements IBaseService<T> {
-	private readonly model: any;
+import { Repository } from 'typeorm';
+import { BaseEntity } from '../entity/base.entity';
+import { IBaseRepository } from './IBase.repository';
+import { Injectable } from '@nestjs/common';
+import { throws } from 'assert';
+@Injectable()
+export class MongoRepository<T extends BaseEntity> implements IBaseRepository<T> {
+	constructor(private readonly repository: Repository<T>) {}
 
-	constructor(model) {
-		this.model = model;
+	async find(): Promise<T[]> {
+		return await this.repository.find();
 	}
-
-	async create(data: object): Promise<any> {
-		const created = new this.model(data);
-		return created.save();
+	async get(id: string): Promise<T> {
+		throw new Error('Method not implemented.');
 	}
-
-	async findAll(): Promise<any> {
-		return [];
+	async update(entity: T): Promise<T> {
+		throw new Error('Method not implemented.');
+	}
+	async create(entity: any): Promise<T> {
+		return await this.repository.save(entity);
+	}
+	async delete(id: string): Promise<void> {
+		throw new Error('Method not implemented.');
 	}
 }

@@ -1,7 +1,7 @@
 export interface IBaseRepository<T> {
-	getAll(): Promise<T[]>;
+	find(): Promise<T[]>;
 	get(id: string): Promise<T>;
 	update(entity: T): Promise<T>;
 	create(entity: T): Promise<T>;
-	delete(id: string);
+	delete(id: string): Promise<void>;
 }
