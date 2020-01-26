@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { UserRepository } from 'src/application/repositories/user.repository';
 
 @Injectable()
 export class AuthUseCase {
-	getHello(): string {
-		return 'Hello World!';
+	constructor(private readonly useRepository: UserRepository) {}
+	async getHello(): Promise<any> {
+		return await this.useRepository.findAll();
 	}
 }

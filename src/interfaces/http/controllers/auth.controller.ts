@@ -6,7 +6,7 @@ export class AuthController {
 	constructor(private readonly appService: AuthUseCase) {}
 
 	@Get()
-	getHello(): string {
-		return this.appService.getHello();
+	async getHello(): Promise<any> {
+		return await this.appService.getHello();
 	}
 }
