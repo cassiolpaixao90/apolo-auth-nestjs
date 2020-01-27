@@ -4,7 +4,7 @@ import { UserSignupDto } from 'src/interfaces/http/serializers/request';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('users')
-@Controller('v1/users')
+@Controller('api/v1/users')
 export class UserController {
 	constructor(private readonly userUseCase: UserUseCase) {}
 
