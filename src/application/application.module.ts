@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AuthUseCase } from 'src/application/use_cases/auth.usecase';
+import { UserUseCase } from 'src/application/use_cases';
 import { UserRepository } from 'src/application/repositories/user.repository';
 
 @Module({
-	exports: [AuthUseCase, UserRepository],
-	providers: [AuthUseCase, UserRepository]
+	exports: [UserUseCase, UserRepository],
+	providers: [UserUseCase, UserRepository]
 })
 export class ApplicationModule {}

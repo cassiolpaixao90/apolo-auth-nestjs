@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AuthController } from 'src/interfaces/http/controllers/auth.controller';
+import { UserController } from 'src/interfaces/http/controllers';
 
 @Module({
-	imports: [AuthController],
-	controllers: [AuthController]
+	imports: [UserController],
+	controllers: [UserController]
 })
 export class InterfaceModule {}

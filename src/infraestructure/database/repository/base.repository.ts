@@ -1,10 +1,10 @@
 import { Repository } from 'typeorm';
-import { BaseEntity } from '../entity/base.entity';
+import { BaseEntity } from '../entity';
 import { IBaseRepository } from './IBase.repository';
 import { Injectable } from '@nestjs/common';
-import { throws } from 'assert';
+
 @Injectable()
-export class MongoRepository<T extends BaseEntity> implements IBaseRepository<T> {
+export class BaseRepository<T extends BaseEntity> implements IBaseRepository<T> {
 	constructor(private readonly repository: Repository<T>) {}
 
 	async find(): Promise<T[]> {

@@ -1,10 +1,10 @@
 import { Repository } from 'typeorm';
 import { Injectable, Inject } from '@nestjs/common';
-import { UserEntity } from 'src/infraestructure/database/entity/user.entity';
-import { MongoRepository } from 'src/infraestructure/database/repository/mongo.repository';
+import { UserEntity } from 'src/infraestructure/database/entity';
+import { BaseRepository } from 'src/infraestructure/database/repository';
 
 @Injectable()
-export class UserRepository extends MongoRepository<UserEntity> {
+export class UserRepository extends BaseRepository<UserEntity> {
 	constructor(
 		@Inject('USER_ENTITY')
 		private readonly userRepository: Repository<UserEntity>
