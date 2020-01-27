@@ -17,8 +17,14 @@ export class ValidationPipe implements PipeTransform<any> {
 		}
 		const object = plainToClass(metatype, value);
 		const errors = await validate(object);
-		if (errors.length > 0) {
-			throw new BadRequestException(errors);
+
+		if (errors && errors.length > 0) {
+			throw new BadRequestException(
+				errors.map((v) => ({
+					property: v.property,
+					message: Object.values(v.constraints).join(', ')
+				}))
+			);
 		}
 		return value;
 	}

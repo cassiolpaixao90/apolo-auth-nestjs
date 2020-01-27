@@ -25,6 +25,7 @@ import { AppModule } from './app.module';
 	const document = SwaggerModule.createDocument(app, options);
 	SwaggerModule.setup('api/docs', app, document);
 
+	app.setGlobalPrefix('api');
 	app.useGlobalPipes(new ValidationPipe());
 	await app.listen(3000);
 })();
