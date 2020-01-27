@@ -4,11 +4,11 @@ import { UserCreateRequest } from 'src/interfaces/http/serializers/request';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('auth')
-@Controller('api/user')
+@Controller('api/v1/users')
 export class UserController {
 	constructor(private readonly userUseCase: UserUseCase) {}
 
-	@Post()
+	@Post('signup')
 	async createUser(@Body() userCreateRequest: UserCreateRequest) {
 		return await this.userUseCase.createUser(userCreateRequest);
 	}
