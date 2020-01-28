@@ -1,22 +1,16 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from 'src/interfaces/http/controllers/user.controller';
-import { AppService } from 'src/application/use_cases/user.usecase';
+import { UserController } from 'src/interfaces/http/modules/user/user.controller';
+import { UserUseCase } from 'src/application/use_cases/user.usecase';
 
 describe('AppController', () => {
-	let appController: AppController;
+	let userController: UserController;
 
 	beforeEach(async () => {
 		const app: TestingModule = await Test.createTestingModule({
-			controllers: [AppController],
-			providers: [AppService]
+			controllers: [UserController],
+			providers: [UserUseCase]
 		}).compile();
 
-		appController = app.get<AppController>(AppController);
-	});
-
-	describe('root', () => {
-		it('should return "Hello World!"', () => {
-			expect(appController.getHello()).toBe('Hello World!');
-		});
+		userController = app.get<UserController>(UserController);
 	});
 });

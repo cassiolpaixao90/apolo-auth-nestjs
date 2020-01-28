@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { APP_PIPE } from '@nestjs/core';
 
-import { UserController } from 'src/interfaces/http/controllers';
+import { UserController } from 'src/interfaces/http/modules/user';
 import { ValidationPipe } from 'src/interfaces/http/pipes';
 
 @Module({

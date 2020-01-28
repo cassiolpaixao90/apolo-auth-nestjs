@@ -22,7 +22,7 @@ export class ValidationPipe implements PipeTransform<any> {
 			throw new BadRequestException(
 				errors.map((v) => ({
 					property: v.property,
-					message: Object.values(v.constraints).join(', ')
+					message: Object.values(v.constraints).join()
 				}))
 			);
 		}

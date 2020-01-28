@@ -1,6 +1,6 @@
 import { Controller, Get, Body, Post } from '@nestjs/common';
 import { UserUseCase } from 'src/application/use_cases';
-import { UserSignupDto } from 'src/interfaces/http/serializers/request';
+import { UserSignupDto } from 'src/interfaces/http/modules/user/request';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('users')
