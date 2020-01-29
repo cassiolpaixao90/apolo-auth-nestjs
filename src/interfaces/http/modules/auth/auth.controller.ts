@@ -3,12 +3,11 @@ import { UserUseCase } from 'src/application/use_cases';
 import { UserSignupRequest } from 'src/interfaces/http/modules/auth/request';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('users')
-@Controller('api/v1/users')
-export class UserController {
+@ApiTags('auth')
+@Controller('api/v1/auth')
+export class AuthController {
 	constructor(private readonly userUseCase: UserUseCase) {}
 
-	// @UsePipes(new ValidationPipe())
 	@Post('signup')
 	async createUser(@Body() userSignupRequest: UserSignupRequest) {
 		return await this.userUseCase.createUser(userSignupRequest);
