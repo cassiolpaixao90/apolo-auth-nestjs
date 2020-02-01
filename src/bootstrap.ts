@@ -5,6 +5,7 @@ import * as helmet from 'helmet';
 import * as rateLimit from 'express-rate-limit';
 
 import { AppModule } from './app.module';
+import { useContainer } from 'class-validator';
 
 (async () => {
 	const app = await NestFactory.create(AppModule);
@@ -22,9 +23,11 @@ import { AppModule } from './app.module';
 		.setDescription('The Apolo Auth API description')
 		.setVersion('1.0')
 		.build();
+
 	const document = SwaggerModule.createDocument(app, options);
 	SwaggerModule.setup('api/docs', app, document);
 
+	useContainer(app.select(AppModule), { fallbackOnErrors: true });
 	app.useGlobalPipes(new ValidationPipe());
 	await app.listen(3000);
 })();

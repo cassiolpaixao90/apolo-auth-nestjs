@@ -9,7 +9,7 @@
 			"request": "launch",
 			"name": "Apolo:Dev:Debugger",
 			"protocol": "inspector",
-			"args": ["${workspaceRoot}/src/main.ts"],
+			"args": ["${workspaceRoot}/src/bootstrap.ts"],
 			"cwd": "${workspaceRoot}",
 			"runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
 			"internalConsoleOptions": "openOnSessionStart"

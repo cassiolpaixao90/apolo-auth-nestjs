@@ -6,6 +6,7 @@ import { DatabaseModule } from 'src/infraestructure/database/database.module';
 const APP_MODULES = [ApplicationModule, InterfaceModule, DatabaseModule];
 @Global()
 @Module({
+	providers: [...APP_MODULES],
 	imports: [...APP_MODULES],
 	exports: [...APP_MODULES]
 })

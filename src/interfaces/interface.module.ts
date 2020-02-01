@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, Global } from '@nestjs/common';
 import { APP_PIPE, APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 
 import { UserController, AuthController } from 'src/interfaces/http/modules';
@@ -6,9 +6,11 @@ import { ValidationPipe } from 'src/interfaces/http/pipes';
 import { HttpErrorFilter } from 'src/interfaces/http/filters';
 import { LoggingInterceptor } from 'src/interfaces/http/interceptors';
 
+import { IsUserAlreadyExist } from 'src/interfaces/http/decorators';
+
 const CONTROLLERS = [UserController, AuthController];
+@Global()
 @Module({
-	imports: [...CONTROLLERS],
 	controllers: [...CONTROLLERS],
 	providers: [
 		{
@@ -22,7 +24,8 @@ const CONTROLLERS = [UserController, AuthController];
 		{
 			provide: APP_INTERCEPTOR,
 			useClass: LoggingInterceptor
-		}
+		},
+		IsUserAlreadyExist
 	]
 })
 export class InterfaceModule {}
