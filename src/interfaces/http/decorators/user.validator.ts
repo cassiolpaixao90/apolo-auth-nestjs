@@ -1,11 +1,11 @@
-import { ValidatorConstraint, ValidatorConstraintInterface, ValidationArguments } from 'class-validator';
-import { UserRepository } from 'src/application/repositories/user.repository';
 import { Injectable } from '@nestjs/common';
+import { ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface } from 'class-validator';
+import { UserRepository } from 'src/application/repositories/user.repository';
 
 @ValidatorConstraint({ name: 'isUserAlreadyExist', async: true })
 @Injectable()
 export class IsUserAlreadyExist implements ValidatorConstraintInterface {
-	constructor(private readonly userRepository: UserRepository) { }
+	constructor(private readonly userRepository: UserRepository) {}
 
 	public async validate(email: string) {
 		const user = await this.userRepository.findByEmail(email);

@@ -1,0 +1,70 @@
+{
+    "window.zoomLevel": 1,
+    "workbench.iconTheme": "material-icon-theme",
+    "prettier.printWidth": 120,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 2,
+    "prettier.bracketSpacing": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.tabCompletion": "on",
+    "eslint.validate": [
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+        {
+            "language": "javascriptreact",
+            "autoFix": true
+        },
+        {
+            "language": "typescript",
+            "autoFix": true
+        },
+        {
+            "language": "typescriptreact",
+            "autoFix": true
+        }
+    ],
+    "editor.lineHeight": 24.65,
+    "editor.letterSpacing": 0.5,
+    "editor.fontSize": 14,
+    "editor.tabSize": 4,
+    "editor.renderLineHighlight": "gutter",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "editor.parameterHints.enabled": false,
+    "breadcrumbs.enabled": true,
+    "javascript.suggest.autoImports": false,
+    "editor.suggestSelection": "first",
+    "git.autofetch": true,
+    "node-module-intellisense.scanBuiltinModules": true,
+    "node-module-intellisense.scanDevDependencies": true,
+    "node-module-intellisense.scasnFileModules": true,
+    "node-module-intellisense.modulePaths": [],
+    "node-module-intellisense.autoStripExtensions": [
+        ".js",
+        ".jsx",
+        ".ts",
+        ".d.ts",
+        ".tsx"
+    ],
+    "git.enableSmartCommit": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
+}

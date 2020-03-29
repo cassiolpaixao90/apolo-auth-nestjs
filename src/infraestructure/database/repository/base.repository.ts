@@ -22,7 +22,7 @@ export class BaseRepository<T extends BaseEntity> implements IBaseRepository<T> 
 	async create(entity: any): Promise<T> {
 		return await this.repository.save(entity);
 	}
-	
+
 	async delete(id: string): Promise<void> {
 		throw new Error('Method not implemented.');
 	}
