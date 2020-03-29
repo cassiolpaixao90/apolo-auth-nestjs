@@ -1,7 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { BaseEntity } from '../entity';
 import { IBaseRepository } from './IBase.repository';
-import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class BaseRepository<T extends BaseEntity> implements IBaseRepository<T> {

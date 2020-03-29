@@ -1,7 +1,5 @@
-import { createConnection } from 'typeorm';
-import { Connection } from 'typeorm';
-import { UserEntity } from 'src/infraestructure/database/entity/user.entity';
-
+import { UserEntity } from 'src/infraestructure/database';
+import { Connection, createConnection } from 'typeorm';
 export const databaseProviders = [
 	{
 		provide: 'DATABASE_CONNECTION',

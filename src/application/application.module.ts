@@ -1,6 +1,6 @@
-import { Module, Global } from '@nestjs/common';
-import { UserUseCase } from 'src/application/use_cases';
+import { Global, Module } from '@nestjs/common';
 import { UserRepository } from 'src/application/repositories';
+import { UserUseCase } from 'src/application/use_cases';
 
 const EXPORTS = [UserUseCase, UserRepository];
 const PROVIDERS = [UserUseCase, UserRepository];

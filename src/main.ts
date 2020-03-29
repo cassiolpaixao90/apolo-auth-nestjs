@@ -1,11 +1,10 @@
-import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import * as helmet from 'helmet';
-import * as rateLimit from 'express-rate-limit';
-
-import { AppModule } from './app.module';
+import { NestFactory } from '@nestjs/core';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { useContainer } from 'class-validator';
+import * as rateLimit from 'express-rate-limit';
+import * as helmet from 'helmet';
+import { AppModule } from './app.module';
 
 (async () => {
 	const app = await NestFactory.create(AppModule);
