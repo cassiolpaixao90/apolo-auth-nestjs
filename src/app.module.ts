@@ -1,9 +1,9 @@
 import { Module, Global } from '@nestjs/common';
 import { InterfaceModule } from 'src/interfaces/interface.module';
 import { ApplicationModule } from 'src/application/application.module';
-import { DatabaseModule } from 'src/infraestructure/database/database.module';
+import { InfraModule } from 'src/infraestructure/infra.module';
 
-const APP_MODULES = [ApplicationModule, InterfaceModule, DatabaseModule];
+const APP_MODULES = [ApplicationModule, InterfaceModule, InfraModule];
 @Global()
 @Module({
 	providers: [...APP_MODULES],

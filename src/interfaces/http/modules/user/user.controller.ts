@@ -8,7 +8,6 @@ import { ApiTags } from '@nestjs/swagger';
 export class UserController {
 	constructor(private readonly userUseCase: UserUseCase) {}
 
-	// @UsePipes(new ValidationPipe())
 	@Post('signup')
 	async createUser(@Body() userSignupRequest: UserSignupRequest) {
 		return await this.userUseCase.createUser(userSignupRequest);
