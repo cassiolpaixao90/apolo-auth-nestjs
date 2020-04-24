@@ -11,11 +11,11 @@ export class UserRepository extends BaseRepository<UserEntity> {
 		super(userRepository);
 	}
 
-	async findByEmail(email: string): Promise<object> {
+	async findByEmail(email): Promise<object> {
 		return this.userRepository.findOne({
 			where: {
 				email
 			}
-		});
+        });
 	}
 }

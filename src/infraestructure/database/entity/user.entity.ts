@@ -1,13 +1,13 @@
-import { Entity, Column } from 'typeorm';
+import { Column, Entity } from 'typeorm';
 import { BaseEntity } from './base.entity';
 
 @Entity('users')
 export class UserEntity extends BaseEntity {
 	@Column({ length: 50 })
-	readonly name: string;
+	readonly email: string;
 
 	@Column({ length: 50 })
-	readonly age: number;
+	readonly password: number;
 
 	constructor(o: object) {
 		super();

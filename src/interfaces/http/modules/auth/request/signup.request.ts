@@ -1,8 +1,8 @@
-import { IsEmail, IsString, IsNotEmpty, Validate } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { IsEmail, IsNotEmpty, IsString, Validate } from 'class-validator';
 import { IsUserAlreadyExist } from 'src/interfaces/http/decorators';
 
-export class UserSignupRequest {
+export class AuthSignupRequest {
 	@ApiProperty()
 	@IsNotEmpty()
 	@IsString()

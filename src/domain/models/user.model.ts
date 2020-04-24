@@ -1,4 +1,5 @@
-export class User {
+
+export class UserDomain {
 	private readonly name: string;
 	private readonly email: string;
 	private readonly password: string;
@@ -11,15 +12,15 @@ export class User {
 	private readonly active: boolean;
 
 	constructor(
-		name: string,
-		email: string,
-		password: string,
-		passwordConfirm: string,
-		photo: string,
-		passwordChangedAt: Date,
-		passwordResetToken: string,
-		passwordResetExpires: Date,
-		active: boolean
+		name?: string,
+		email?: string,
+		password?: string,
+		passwordConfirm?: string,
+		photo?: string,
+		passwordChangedAt?: Date,
+		passwordResetToken?: string,
+		passwordResetExpires?: Date,
+		active?: boolean
 	) {
 		this.name = name;
 		this.email = email;

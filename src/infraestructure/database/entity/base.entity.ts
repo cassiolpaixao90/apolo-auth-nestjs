@@ -1,4 +1,4 @@
-import { ObjectIdColumn, ObjectID } from 'typeorm';
+import { ObjectID, ObjectIdColumn } from 'typeorm';
 
 export class BaseEntity {
 	@ObjectIdColumn()
