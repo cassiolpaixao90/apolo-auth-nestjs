@@ -37,7 +37,7 @@
 		"@nestjs/typeorm": "6.2.0",
 		"@nestjs/websockets": "^6.0.4",
 		"@types/lodash": "^4.14.149",
-		"class-transformer": "^0.2.3",
+		"class-transformer": "^0.3.1",
 		"class-validator": "^0.12.1",
 		"consul": "^0.34.1",
 		"csurf": "^1.11.0",
